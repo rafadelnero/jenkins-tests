@@ -1,0 +1,5 @@
+Use this command in the master machine
+ssh-keyscan -p 2222 161.35.35.232
+
+Then write the host in the known_hosts file from jenkins
+ssh-keyscan -p 2222 161.35.35.232 >> /var/jenkins_home/.ssh/known_hosts
