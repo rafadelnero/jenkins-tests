@@ -1,0 +1,12 @@
+- Create a Jenkins node
+
+Create an instance in a cloud provider
+
+Use the wget command to get the agent.jar
+http://178.128.38.40:8080/jnlpJars/agent.jar
+
+Then, Run from agent command line from the node create on Jenkins (Example):
+java -jar agent.jar -jnlpUrl http://IP:PORT/computer/builder2/slave-agent.jnlp -secret
+secret -workDir "/var/jenkins/"
+
+

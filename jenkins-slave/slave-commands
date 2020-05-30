@@ -1,5 +1,15 @@
 Use this command in the master machine
-ssh-keyscan -p 2222 161.35.35.232
+ssh-keyscan -p 2222 178.62.72.171
 
 Then write the host in the known_hosts file from jenkins
-ssh-keyscan -p 2222 161.35.35.232 >> /var/jenkins_home/.ssh/known_hosts
+ssh-keyscan -p 2222 178.62.72.171 >> /var/jenkins_home/.ssh/known_hosts
+
+Grant access to Jenkins user:
+
+Access the Jenkins container
+docker container exec -it [container_name] bash | sh
+
+Then grant access to the user:
+groupadd docker
+usermod -aG docker jenkins
+chmod 777 /var/run/docker.sock
