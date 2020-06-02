@@ -1,0 +1,11 @@
+-- Create a ssh credential with the private key from github
+
+-- install the sshagent plugin
+
+-- use the function sshagent (credentials: ['github-key']) { ... }
+
+-- Run  the following command on the Jenkins machine
+ssh-keyscan github.com
+
+-- Then add the keys to the known_hosts from Jenkins
+ssh-keyscan github.com >> /var/jenkins_home/.ssh/known_hosts
